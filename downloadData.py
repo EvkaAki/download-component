@@ -18,7 +18,7 @@ f = open("/output.txt", 'w')
 f.write(str(pod))
 f.close()
 f = open()
-
+print(podPath)
 f = open(podPath, 'w')
 f.write(str(pod))
 f.close()
