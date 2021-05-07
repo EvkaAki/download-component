@@ -1,4 +1,4 @@
-name: Download data and outpud pod name
+name: Download data and output pod name
 description: Download data and get name of the pod it is running in
 metadata:
   annotations:
@@ -6,7 +6,7 @@ metadata:
 inputs:
   - {name: url, type: URI, description: 'URL from where to download data'}
 outputs:
-  - {name: pod name, type: String, description: 'Get name of pod where is download comming from.'}
+  - {name: pod name, type: String, description: 'Get name of pod where is download coming from.'}
   - {name: Data}
 implementation:
   container:
