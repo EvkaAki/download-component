@@ -7,6 +7,7 @@ inputs:
   - {name: url, type: URI, description: 'URL from where to download data'}
 outputs:
   - {name: pod name, type: String, description: 'Get name of pod where is download comming from.'}
+  - {name: Data}
 implementation:
   container:
     # The strict name of a container image that you've pushed to a container registry.
@@ -17,5 +18,6 @@ implementation:
         --url,
         inputValue: url
         --pod-name,
-        outputPath: pod name,
+        outputValue: pod name,
+        outputPath: Data,
     ]
