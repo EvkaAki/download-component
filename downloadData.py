@@ -1,23 +1,34 @@
 import argparse
-import wget
+import urllib
 import os
 
 parser = argparse.ArgumentParser(description='Download data and output it with pod id.')
 parser.add_argument('--url', type=str, default=100,
   help='Url to the file inside of cluster.')
 parser.add_argument("--pod-path", type=str, help="Path to store URI output")
+parser.add_argument("--data-path", type=str, help="Path to store DATA output")
 
 args = parser.parse_args()
-podPath = args.pod_path
+pod_path = args.pod_path
 
-file_url = str(args.url)
-data = wget.download(file_url,'/data.csv')
 pod = open("/etc/hostname").read()
 print(str(pod))
 
-print(podPath)
-if not os.path.exists(os.path.dirname(podPath)):
-    os.makedirs(os.path.dirname(podPath))
-f = open(podPath, 'w+')
+
+print(pod_path)
+if not os.path.exists(os.path.dirname(pod_path)):
+    os.makedirs(os.path.dirname(pod_path))
+f = open(pod_path, 'w+')
+f.write(str(pod))
+f.close()
+
+
+data_path = args.data_path
+file_url = str(args.url)
+if not os.path.exists(os.path.dirname(data_path)):
+    os.makedirs(os.path.dirname(data_path))
+
+data = urllib.urlretrieve(file_url, data_path)
+f = open(data_path, 'w+')
 f.write(str(pod))
 f.close()
