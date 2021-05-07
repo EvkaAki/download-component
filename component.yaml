@@ -8,6 +8,7 @@ inputs:
 outputs:
   - {name: pod path}
   - {name: data path}
+  - {name: workflow path}
 implementation:
   container:
     image: endocker299/download-data:latest
@@ -15,5 +16,6 @@ implementation:
     args: [
         --url, {inputValue: url},
         --pod-path, {outputPath: pod path},
+        --workflow-path, {outputPath: workflow path},
         --data-path, {outputPath: data path},
     ]
