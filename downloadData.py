@@ -29,6 +29,3 @@ if not os.path.exists(os.path.dirname(data_path)):
     os.makedirs(os.path.dirname(data_path))
 
 data = urllib.request.urlretrieve(file_url, data_path)
-f = open(data_path, 'w+')
-f.write(str(pod))
-f.close()
