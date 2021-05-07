@@ -14,7 +14,6 @@ implementation:
     command: [python3 /app/downloadData.py --url]
     args: [
       --url,  {inputValue: url},
+      --data, {outputPath: data},
+      --pod-name {outputPath: pod name}
     ]
-    fileOutputs:
-      pod name: /pod.txt
-      data: /data.csv
