@@ -15,5 +15,5 @@ implementation:
     args: [
       --url,      {inputValue: url},
       --data,     {outputPath: data},
-      --pod-name  {outputPath: pod name},
+      --pod_name  {outputPath: pod name},
     ]
