@@ -3,7 +3,7 @@ import argparse
 import wget
 
 parser = argparse.ArgumentParser(description='Download data and output it with pod id.')
-parser.add_argument('--url', type=Url, default=100,
+parser.add_argument('--url', type=String, default=100,
   help='Url to the file inside of cluster.')
 args = parser.parse_args()
 
