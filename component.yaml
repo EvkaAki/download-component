@@ -7,7 +7,7 @@ inputs:
   - {name: url, type: URI, description: 'URL from where to download data'}
 outputs:
   - {name: All output data}
-  - {name: pod}
+  - {name: pod path}
 implementation:
   container:
     image: endocker299/download-data:latest
