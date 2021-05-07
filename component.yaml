@@ -18,6 +18,6 @@ implementation:
         {inputValue: url},
         --data,
         {outputPath: data},
-        --pod_name,
+        --pod-name,
         {outputPath: pod name}
     ]
