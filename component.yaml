@@ -11,11 +11,10 @@ outputs:
 implementation:
   container:
     image: endocker299/clean-pods:latest
-    command: [
-        python3,
-        /app/downloadData.py,
-        --url,
-        - inputValue: url
-        - outputValue: pod name,
-        - outputPath: Data,
+    command: [python3 /app/downloadData.py --url]
+    args: [
+      --url,  {inputValue: url}
     ]
+    fileOutputs:
+      pod name: /pod.txt
+      data: /data.csv

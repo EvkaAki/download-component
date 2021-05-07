@@ -8,7 +8,10 @@ parser.add_argument('--url', type=int, default=100,
 args = parser.parse_args()
 
 file_url = str(args.url)
-data = wget.download(file_url)
+data = wget.download(file_url,'/data.csv')
 
 pod_name = open("/etc/hostname").read()
 print(str(pod_name))
+f = open("/pod.txt", 'w')
+f.write(str(pod_name))
+f.close()
