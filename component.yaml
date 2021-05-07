@@ -1,0 +1,21 @@
+name: Download data and outpud pod name
+description: Download data and get name of the pod it is running in
+metadata:
+  annotations:
+    author: Eva Nedeliaková <evanedeliakova@gmail.com>
+inputs:
+  - {name: url, type: URI, description: 'URL from where to download data'}
+outputs:
+  - {name: pod name, type: String, description: 'Get name of pod where is download comming from.'}
+implementation:
+  container:
+    # The strict name of a container image that you've pushed to a container registry.
+    image: endocker299/clean-pods:latest
+    command: [
+        python3,
+        /app/downloadData.py,
+        --url,
+        inputValue: url
+        --pod-name,
+        outputPath: pod name,
+    ]
