@@ -6,7 +6,7 @@ metadata:
 inputs:
   - {name: url, type: URI, description: 'URL from where to download data'}
 outputs:
-  - {name: pod name}
+  - {name: All output data}
 implementation:
   container:
     image: endocker299/download-data:latest
@@ -15,4 +15,4 @@ implementation:
         --url, {inputValue: url},
     ]
     fileOutputs:
-      Training output dir: /output.txt
+      All output data: /output.txt
