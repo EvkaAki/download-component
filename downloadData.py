@@ -15,6 +15,6 @@ pod = open("/etc/hostname").read()
 print(str(pod))
 
 print(podPath)
-f = open(podPath, 'w')
+f = open(podPath, 'w+')
 f.write(str(pod))
 f.close()
