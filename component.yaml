@@ -4,7 +4,7 @@ metadata:
   annotations:
     author: Eva Nedeliaková <evanedeliakova@gmail.com>
 inputs:
-  - {name: url, type: URI, description: 'URL from where to download data'}
+  - {name: url, type: URI, description: 'URL from where to download data --trigger'}
 outputs:
   - {name: pod name, type: String, description: 'Get name of the pod from where the download coming from.'}
   - {name: Data}
