@@ -11,3 +11,4 @@ file_url = str(args.url)
 data = wget.download(file_url)
 
 pod_name = open("/etc/hostname").read()
+print(str(pod_name))
