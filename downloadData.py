@@ -1,5 +1,6 @@
 import argparse
 import wget
+import os
 
 parser = argparse.ArgumentParser(description='Download data and output it with pod id.')
 parser.add_argument('--url', type=str, default=100,
@@ -15,6 +16,8 @@ pod = open("/etc/hostname").read()
 print(str(pod))
 
 print(podPath)
+if not os.path.exists(os.path.dirname(podPath)):
+    os.makedirs(os.path.dirname(podPath))
 f = open(podPath, 'w+')
 f.write(str(pod))
 f.close()
