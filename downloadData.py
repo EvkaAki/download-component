@@ -4,8 +4,6 @@ import wget
 parser = argparse.ArgumentParser(description='Download data and output it with pod id.')
 parser.add_argument('--url', type=str, default=100,
   help='Url to the file inside of cluster.')
-parser.add_argument('--data')
-parser.add_argument('--pod_name', type=str, help='GCS path of the output directory.')
 
 args = parser.parse_args()
 
