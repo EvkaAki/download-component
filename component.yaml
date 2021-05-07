@@ -16,8 +16,7 @@ implementation:
         python3,
         /app/downloadData.py,
         --url,
-        inputValue: url
-        --pod-name,
-        outputValue: pod name,
-        outputPath: Data,
+        - inputValue: url
+        - outputValue: pod name,
+        - outputPath: Data,
     ]
