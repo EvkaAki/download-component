@@ -13,7 +13,7 @@ implementation:
     image: endocker299/download-data:latest
     command: [python3 /app/downloadData.py --url]
     args: [
-      --url,  {inputValue: url},
-      --data, {outputPath: data},
-      --pod-name {outputPath: pod name}
+      --url,      {inputValue: url},
+      --data,     {outputPath: data},
+      --pod-name  {outputPath: pod name},
     ]
