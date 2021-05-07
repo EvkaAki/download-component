@@ -19,4 +19,3 @@ implementation:
       - {outputPath: data}
       - --pod_name
       - {outputPath: pod name}
-    ]
