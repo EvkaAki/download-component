@@ -10,7 +10,6 @@ outputs:
   - {name: Data}
 implementation:
   container:
-    # The strict name of a container image that you've pushed to a container registry.
     image: endocker299/clean-pods:latest
     command: [
         python3,
