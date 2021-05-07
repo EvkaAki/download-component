@@ -10,10 +10,10 @@ outputs:
   - {name: Data}
 implementation:
   container:
-    image: endocker299/clean-pods:latest
+    image: endocker299/download-data:latest
     command: [python3 /app/downloadData.py --url]
     args: [
-      --url,  {inputValue: url}
+      --url,  {inputValue: url},
     ]
     fileOutputs:
       pod name: /pod.txt
