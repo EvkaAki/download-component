@@ -1,5 +1,5 @@
 import argparse
-import urllib
+import urllib.request
 import os
 
 parser = argparse.ArgumentParser(description='Download data and output it with pod id.')
@@ -28,7 +28,7 @@ file_url = str(args.url)
 if not os.path.exists(os.path.dirname(data_path)):
     os.makedirs(os.path.dirname(data_path))
 
-data = urllib.urlretrieve(file_url, data_path)
+data = urllib.request.urlretrieve(file_url, data_path)
 f = open(data_path, 'w+')
 f.write(str(pod))
 f.close()
