@@ -6,18 +6,13 @@ metadata:
 inputs:
   - {name: url, type: URI, description: 'URL from where to download data'}
 outputs:
-  - {name: pod name, type: String, description: 'Get name of the pod from where the download coming from.'}
-  - {name: data}
+  - {name: pod name}
 implementation:
   container:
     image: endocker299/download-data:latest
-    command: [
-        python3,
-        /app/downloadData.py,
-        --url,
-        {inputValue: url},
-        --data,
-        {outputPath: data},
-        --pod-name,
-        {outputPath: pod name}
+    command: [python3,/app/downloadData.py]
+    args: [
+        --url, {inputValue: url},
     ]
+    fileOutputs:
+      Training output dir: /output.txt
