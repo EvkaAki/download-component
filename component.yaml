@@ -4,18 +4,20 @@ metadata:
   annotations:
     author: Eva Nedeliaková <evanedeliakova@gmail.com>
 inputs:
-  - {name: url, type: String, description: 'URL from where to download data'}
+  - {name: url, type: URI, description: 'URL from where to download data'}
 outputs:
   - {name: pod name, type: String, description: 'Get name of the pod from where the download coming from.'}
   - {name: data}
 implementation:
   container:
     image: endocker299/download-data:latest
-    command: ['python', '/app/downloadData.py']
-    args:
-      - --url
-      - {inputValue: url}
-      - --data
-      - {outputPath: data}
-      - --pod_name
-      - {outputPath: pod name}
+    command: [
+        python3,
+        /app/downloadData.py,
+        --url,
+        inputValue: url,
+        --data,
+        outputPath: data,
+        --pod_name,
+        outputPath: pod name
+    ]
