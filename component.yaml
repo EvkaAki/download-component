@@ -11,7 +11,7 @@ outputs:
 implementation:
   container:
     image: endocker299/download-data:latest
-    command: [python3 /app/downloadData.py --url]
+    command: [python3 /app/downloadData.py]
     args: [
       --url,      {inputValue: url},
       --data,     {outputPath: data},
