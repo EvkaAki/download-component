@@ -6,7 +6,6 @@ metadata:
 inputs:
   - {name: url, type: URI, description: 'URL from where to download data'}
 outputs:
-  - {name: All output data}
   - {name: pod path}
 implementation:
   container:
@@ -16,5 +15,3 @@ implementation:
         --url, {inputValue: url},
         --pod-path, {outputPath: pod path},
     ]
-    fileOutputs:
-      All output data: /output.txt
