@@ -15,7 +15,7 @@ pod = open("/etc/hostname").read()
 print(str(pod))
 
 
-print(pod_path)
+print("Pod path " + pod_path)
 if not os.path.exists(os.path.dirname(pod_path)):
     os.makedirs(os.path.dirname(pod_path))
 f = open(pod_path, 'w+')
